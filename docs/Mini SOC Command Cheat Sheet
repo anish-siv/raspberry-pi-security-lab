@@ -1,0 +1,60 @@
+==============================
+MINI SOC COMMAND CHEAT SHEET
+==============================
+
+--- SYSTEM BASICS ---
+whoami
+hostname -I
+uptime
+top
+
+--- USER & PERMISSIONS ---
+adduser <username>
+usermod -aG sudo <username>
+groups <username>
+sudo -l
+
+--- SSH ---
+sudo systemctl status ssh
+sudo systemctl restart ssh
+sudo nano /etc/ssh/sshd_config
+ssh <user>@<IP>
+
+--- FIREWALL (UFW) ---
+sudo ufw status
+sudo ufw enable
+sudo ufw allow 22/tcp
+sudo ufw reload
+
+--- LOGS ---
+sudo journalctl -u ssh -f
+sudo journalctl -u ssh -n 50
+sudo journalctl -xe
+sudo journalctl | grep ssh
+
+--- NETWORK ---
+ss -tlnp
+ping <IP>
+
+--- FAIL2BAN ---
+sudo systemctl status fail2ban
+sudo fail2ban-client status
+sudo fail2ban-client status sshd
+
+--- PACKAGE MANAGEMENT ---
+sudo apt update
+sudo apt upgrade -y
+sudo apt install <package>
+
+--- SERVICES ---
+sudo systemctl status <service>
+sudo systemctl start <service>
+sudo systemctl stop <service>
+sudo systemctl restart <service>
+sudo systemctl enable <service>
+
+--- TROUBLESHOOTING ---
+sudo ufw status
+sudo systemctl status ssh
+sudo ss -tlnp | grep :22
+journalctl -xe
