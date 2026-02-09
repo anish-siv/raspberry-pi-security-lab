@@ -1,6 +1,6 @@
 # Lessons Learned (Phase 1)
 
-- Authorization verifies a user's identity, whereas authorization determines a user's permissions.
+- Authentication verifies a user's identity, whereas authorization determines a user's permissions.
 - Accounting is important to track and log activities.
 - Remote access is powerful and needs to be carefully secured.
 - Logs help detect suspicious behavior.
