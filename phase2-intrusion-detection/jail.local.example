@@ -1,0 +1,20 @@
+# Example Fail2Ban jail configuration for SSH brute-force protection
+# Replace <YOUR_LAN_CIDR_HERE> with your local network (e.g., 192.168.1.0/24)
+
+[sshd]
+enabled = true
+
+# Never ban these IP ranges (localhost + your LAN)
+ignoreip = 127.0.0.1/8 ::1 <YOUR_LAN_CIDR_HERE>
+
+# How many failures before ban
+maxretry = 3
+
+# Time window to count failures
+findtime = 5m
+
+# Ban duration
+bantime = 10m
+
+# Log source (matches your system)
+backend = systemd
